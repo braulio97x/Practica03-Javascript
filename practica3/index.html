@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="javascript/validacion.js"></script>
+    <link rel="stylesheet" href="CSS/estilos.css" type="text/css" media="screen">
+</head>
+<body id="cuerpo">
+
+    <section class="Formulario">
+
+        <header class="encabezado">
+            <h1>Formulario</h1>
+        </header>
+
+        <div class="separador"></div>
+
+        
+            <aside class="estructuraFormulario">
+                <img id="avatar" src="images/avatar.png" class="imapie" alt="Información Sanitaria" />
+                <form id="formulario01" method="POST" action="PHP/paginaPHP.php" onsubmit="return validarCamposObligatorios()">
+
+                    <!--
+                        - onkeyup: Cuando se deja de presionar sobre alguna tecla
+                        - onblur: Cuando se Deselecciona el elemento
+                    -->
+            
+                    <label for="cedula">Cedula (*)</label>
+                    <br>
+                    <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula" onkeyup="return validarNumeros(this)" onblur="return validacionCedula(this)"/>
+                    <br>
+                    <span id="mensajeCedula" class="error"></span>
+                    <br>
+            
+                    <label for="nombres">Nombres (*)</label>
+                    <br>
+                    <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres" onkeyup="return validarLetras(this)" onblur="return dividirCadenas(this, 'mensajeNombres')" />
+                    <br>
+                    <span id="mensajeNombres" class="error"></span>
+                    <br>
+            
+                    <label for="apellidos">Apelidos (*)</label>
+                    <br>
+                    <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos" onkeyup="return validarLetras(this)" onblur="return dividirCadenas(this, 'mensajeApellidos')"/>
+                    <br>
+                    <span id="mensajeApellidos" class="error"></span>
+                    <br>
+            
+                    <label for="direccion">Dirección (*)</label>
+                    <br>
+                    <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección"  />
+                    <br>
+                    <span id="mensajeDireccion" class="error"></span>
+                    <br>
+            
+                    <label for="telefono">Teléfono (*)</label>
+                    <br>
+                    <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico" onkeyup="return validarNumeros(this)" onblur="return numeroTelefono(this)" />
+                    <br>
+                    <span id="mensajeTelefono" class="error"></span>
+                    <br>
+            
+                    <label for="fecha">Fecha Nacimiento (*)</label>
+                    <br>
+                    <input type="text" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="Ej.: 11/05/2020" onkeyup="return validacionCaracteresFecha(this)" onblur="return validacionFechaNacimiento(this)"/>
+                    <br>
+                    <span id="mensajeFecha" class="error"></span>
+                    <br>
+            
+                    <label for="correo">Correo electrónico (*)</label>
+                    <br>
+                    <input type="text" id="correo" name="correo" value="" placeholder="Ej.: usuario@est.ups.edu.ec ó usuario@ups.edu.ec" " onkeyup="return validacionCaracteresCorreo(this)" onblur="return validacionCorreo(this)"  />
+                    <br>
+                    <span id="mensajeCorreo" class="error"></span>
+                    <br>
+            
+                    <label for="constrasena">Contraseña (*)</label>
+                    <br>
+                    <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña" onkeyup="return validacionCaracteresContrasenia(this)" onblur="return validacionContrasenia(this)" />
+                    <br>
+                    <span id="mensajePW" class="error"></span>
+                    <br>
+                    
+                    <br>
+                    <input class="boton" type="submit" id="crear" name="crear" value="Aceptar" />
+                    <input class="boton" type="reset" id="cancelar" name="cancelar" value="Cancelar" />
+                </form>
+            </aside>
+        
+
+            
+
+    
+</body>
+</html>
